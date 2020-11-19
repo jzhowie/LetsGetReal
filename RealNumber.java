@@ -39,7 +39,8 @@ public RealNumber add(RealNumber other){
  * the product of this and the other
  */
 public RealNumber multiply(RealNumber other){
-	return null;
+	RealNumber prod = new RealNumber(getValue() * other.getValue());
+	return prod;
 }
 
 /*
@@ -47,7 +48,8 @@ public RealNumber multiply(RealNumber other){
  * this divided by the other
  */
 public RealNumber divide(RealNumber other){
-	return null;
+	RealNumber quot = new RealNumber(getValue() / other.getValue());
+	return quot;
 }
 
 /*
@@ -55,6 +57,7 @@ public RealNumber divide(RealNumber other){
  * this minus the other
  */
 public RealNumber subtract(RealNumber other){
-	return null;
+	RealNumber diff = new RealNumber(getValue() - other.getValue());
+	return diff;
 }
 }
