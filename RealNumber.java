@@ -29,7 +29,9 @@ public boolean equals(RealNumber other){
 public RealNumber add(RealNumber other){
 	//other can be ANY RealNumber, including a RationalNumber
 	//or other subclasses of RealNumber (that aren't written yet)
-	return null;
+
+	RealNumber sum = new RealNumber(getValue() + other.getValue());
+	return sum;
 }
 
 /*
