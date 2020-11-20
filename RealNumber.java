@@ -1,3 +1,5 @@
+// TODO: EQUALS
+
 public class RealNumber {
 private double value;
 
