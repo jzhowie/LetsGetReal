@@ -1,4 +1,4 @@
-// TODO: GCD AND REDUCTION FIRST, THEN OPERATIONS AND EQUALS
+// TODO: OPERATIONS
 
 public class RationalNumber extends RealNumber
 {
@@ -19,6 +19,7 @@ public RationalNumber(int nume, int deno){
 	else {
 		numerator = nume;
 		denominator = deno;
+		reduce();
 	}
 }
 
@@ -50,6 +51,9 @@ public RationalNumber reciprocal(){
  *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
  */
 public boolean equals(RationalNumber other){
+	if (getNumerator() == other.getNumerator() && getDenominator() == other.getDenominator()) {
+		return true;
+	}
 	return false;
 }
 
@@ -94,8 +98,9 @@ private static int gcd(int a, int b){
  */
 
 private void reduce(){
-	numerator = getNumerator() / gcd(getNumerator(), getDenominator());
-	denominator = getDenominator() / gcd(getNumerator(), getDenominator());
+	int factor = gcd(getNumerator(), getDenominator());
+	numerator = getNumerator() / factor;
+	denominator = getDenominator() / factor;
 }
 
 
