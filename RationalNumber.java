@@ -1,4 +1,4 @@
-// TODO: LITERALLY EVERYTHING
+// TODO: GCD AND REDUCTION FIRST, THEN OPERATIONS AND EQUALS
 
 public class RationalNumber extends RealNumber
 {
@@ -15,10 +15,6 @@ public RationalNumber(int nume, int deno){
 	if (deno == 0) {
 		numerator = 0;
 		denominator = 1;
-	}
-	else if (deno < 0) {
-		numerator = nume * -1;
-		denominator = deno * -1;
 	}
 	else {
 		numerator = nume;
@@ -72,8 +68,23 @@ public String toString(){
  */
 private static int gcd(int a, int b){
 	/*use euclids method or a better one*/
-http:   //sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
-	return 0;
+	int remainder = -1;
+	if (a < b) {
+		// if a<b exchange a and b
+		int temp = a;
+		a = b;
+		b = temp;
+	}
+
+	while (b != 0 && remainder != 0) {
+		remainder = a % b;
+		if (remainder == 0) {
+			return b;
+		}
+		a = b;
+		b = remainder;
+	}
+	return 1;
 }
 
 /**
@@ -81,9 +92,13 @@ http:   //sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
  * This must be used to maintain that all RationalNumbers are
  * reduced after construction.
  */
-private void reduce(){
 
+private void reduce(){
+	numerator = getNumerator() / gcd(getNumerator(), getDenominator());
+	denominator = getDenominator() / gcd(getNumerator(), getDenominator());
 }
+
+
 /******************Operations Return a new RationalNumber!!!!****************/
 /**
  * Return a new RationalNumber that is the product of this and the other
