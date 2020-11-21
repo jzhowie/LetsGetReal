@@ -1,4 +1,4 @@
-// TODO: OPERATIONS
+// TODO: ADDING AND SUBTRACKTING
 
 public class RationalNumber extends RealNumber
 {
@@ -109,14 +109,15 @@ private void reduce(){
  * Return a new RationalNumber that is the product of this and the other
  */
 public RationalNumber multiply(RationalNumber other){
-	return null;
+	RationalNumber prod = new RationalNumber (getNumerator() * other.getNumerator(), getDenominator() * other.getDenominator());
+	return prod;
 }
 
 /**
  * Return a new RationalNumber that is the this divided by the other
  */
 public RationalNumber divide(RationalNumber other){
-	return null;
+	return multiply(other.reciprocal());
 }
 
 /**
