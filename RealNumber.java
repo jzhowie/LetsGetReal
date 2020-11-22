@@ -1,4 +1,4 @@
-// TODO: EQUALS
+// TODO:
 
 public class RealNumber {
 private double value;
@@ -21,7 +21,13 @@ public String toString(){
  * Special case: if one is exactly zero, the other must be exactly zero.
  */
 public boolean equals(RealNumber other){
-	return true;
+	if (other.getValue() != 0 && getValue() != 0 && Math.abs(other.getValue() - getValue()) / getValue() < 0.00001) {
+		return true;
+	}
+	else if(getValue() == 0 && other.getValue() == getValue()) {
+		return true;
+	}
+	return false;
 }
 
 /*
