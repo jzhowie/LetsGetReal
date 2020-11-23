@@ -67,6 +67,9 @@ public boolean equals(RationalNumber other){
  *@return the value expressed as "3/4" or "8/3"
  */
 public String toString(){
+	if (getDenominator() == 1) {
+		return getNumerator() + "";
+	}
 	return getNumerator() + "/" + getDenominator();
 }
 
