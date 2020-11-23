@@ -1,4 +1,4 @@
-// TODO: ADDING AND SUBTRACKTING
+// TODO:
 
 public class RationalNumber extends RealNumber
 {
@@ -12,9 +12,14 @@ private int numerator, denominator;
 public RationalNumber(int nume, int deno){
 	super(0.0);//this value is ignored!
 
-	if (deno == 0) {
+	if (nume == 0 || deno == 0) {
 		numerator = 0;
 		denominator = 1;
+	}
+	else if (deno < 0) {
+		numerator = nume * -1;
+		denominator = deno * -1;
+		reduce();
 	}
 	else {
 		numerator = nume;
@@ -98,7 +103,7 @@ private static int gcd(int a, int b){
  */
 
 private void reduce(){
-	int factor = gcd(getNumerator(), getDenominator());
+	int factor = gcd(Math.abs(getNumerator()), Math.abs(getDenominator()));
 	numerator = getNumerator() / factor;
 	denominator = getDenominator() / factor;
 }
