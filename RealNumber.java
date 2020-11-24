@@ -1,6 +1,6 @@
 // TODO:
 
-public class RealNumber {
+public class RealNumber extends Number {
 private double value;
 
 public RealNumber(double v){
@@ -15,20 +15,6 @@ public String toString(){
 	return ""+getValue();
 }
 //---------ONLY EDIT BELOW THIS LINE------------
-
-/*
- * Return true when the values are within 0.001% of eachother.
- * Special case: if one is exactly zero, the other must be exactly zero.
- */
-public boolean equals(RealNumber other){
-	if (other.getValue() != 0 && getValue() != 0 && Math.abs(other.getValue() - getValue()) / getValue() < 0.00001) {
-		return true;
-	}
-	else if(getValue() == 0 && other.getValue() == getValue()) {
-		return true;
-	}
-	return false;
-}
 
 /*
  * Return a new RealNumber that has the value of:
