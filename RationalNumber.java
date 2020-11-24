@@ -70,6 +70,10 @@ public String toString(){
 	if (getDenominator() == 1) {
 		return getNumerator() + "";
 	}
+
+	if (getNumerator() == 0) {
+		return getNumerator() + "";
+	}
 	return getNumerator() + "/" + getDenominator();
 }
 
