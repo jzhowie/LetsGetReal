@@ -1,6 +1,6 @@
 // TODO:
 
-public class RationalNumber extends RealNumber extends Number {
+public class RationalNumber extends Number {
 private int numerator, denominator;
 
 /**Initialize the RationalNumber with the provided values
