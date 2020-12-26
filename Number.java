@@ -1,10 +1,4 @@
 public abstract class Number {
-private double value;
-
-public Number (double v) {
-	value = v;
-}
-
 public abstract double getValue();
 
 public int compareTo (Number other) {
