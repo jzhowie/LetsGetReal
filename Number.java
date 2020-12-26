@@ -14,7 +14,7 @@ public int compareTo (Number other) {
 }
 
 public boolean equals (Number other) {
-	if (other.getValue() != 0 && getValue() != 0 && Math.abs(other.getValue() - getValue()) / getValue() < 0.00001) {
+	if (other.getValue() != 0 && getValue() != 0 && Math.abs(Math.abs(other.getValue() - getValue()) / getValue()) < 0.00001) {
 		return true;
 	}
 	else if (getValue() == 0 && other.getValue() == getValue()) {
