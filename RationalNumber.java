@@ -9,7 +9,6 @@ private int numerator, denominator;
  *@param deno the denominator
  */
 public RationalNumber(int nume, int deno){
-	super(nume / deno);
 
 	if (nume == 0 || deno == 0) {
 		numerator = 0;
